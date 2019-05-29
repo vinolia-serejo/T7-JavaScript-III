@@ -42,49 +42,44 @@
         }
     ];
 
-    const createNav = () => {
-        return (
-            `
-            <nav class="navbar">
-             <img class="navbar__logo" src="./logo.png" alt="Logo" />
-             <div class="group__input">
+
+    const createNav = () =>{
+        return( 
+        `<nav class="navbar">
+        <img class="navbar__logo" src="./logo.png" alt="Logo" />
+        <div class="group__input">
             <input class="input__search" type="search" placeholder="Search" aria-label="Search">
             <button class="button__search"> Search </button>
         </div>
         </nav>
-             `
-
+        `
         )
-
+        document.body.innerHTML += createNav();
     }
-
-    document.body.innerHTML += createNav();
-
 
     const createCard = (resultados) => {
 
-        return resultados.map((resultado) => {
+        return resultados.map((resultados) => {
 
             return (
-                `
-              <div class="card">
-                 <img class="imagem" src=${resultado.imagem} alt="img" />
+            `
+            <div class="card">
+                <img class="imagem" src=${resultados.imagem} alt="img" />
             <div class="">
-                <h2>${resultado.titulo}</h5>
+                <h2>${resultados.titulo}</h2>
                 <p class="ingredientes">
                     <strong>Ingredients: </strong>
-                    ${resultado.ingredientes}
+                    ${resultados.ingredientes}
                 </p>
             </div>  
-        </div>  
-              `
+            </div>  
+            `
             )
         }
         )
-    };
+        };
+        document.body.innerHTML += createCard(resultados);
 
-
-    document.body.innerHTML += createCard(resultados);
 
 </script>
 
